@@ -1,0 +1,57 @@
+/* Basic Theme Colors */
+:root {
+    --primary-color: #ff0000;
+    --secondary-color: #0000ff; /* Blue */
+    --text-color: #ffffff;
+  }
+  
+  /* Header Styles */
+  .site-navbar {
+    background-color: var(--primary-color);
+  }
+  
+  .site-logo img {
+    max-height: 50px;
+  }
+  
+  .nav-link {
+    color: var(--text-color);
+  }
+  
+  .nav-link:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero h1 {
+    color: var(--text-color);
+  }
+  
+  /* Booking Form Styles */
+  .booking-form {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .booking-form .form-control {
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+  }
+  
+  .booking-form .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--text-color);
+  }
+  
+  .booking-form .btn-primary:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+  }
+  

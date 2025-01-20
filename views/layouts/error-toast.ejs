@@ -1,0 +1,26 @@
+<% if (error && error.length > 0) { %>
+    <div id="error-toast-message" style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background-color: rgb(254, 166, 66); color: white; padding: 16px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 300px;">
+        <span style="font-weight: bold;">
+            <%= error %>
+        </span>
+        <div id="error-progress-bar" style="margin-top: 8px; height: 4px; background-color: #ffffff; width: 100%;"></div>
+    </div>
+    <script>
+        const errorToastMessage = document.getElementById('error-toast-message');
+        const errorProgressBar = document.getElementById('error-progress-bar');
+        if (errorToastMessage) {
+            const duration = 5000;
+            errorProgressBar.style.width = '100%';
+            void errorProgressBar.offsetWidth;
+            errorProgressBar.style.transition = `width ${duration}ms linear`;
+            errorProgressBar.style.width = '0%';
+            setTimeout(() => {
+                errorToastMessage.style.opacity = '0';
+                errorToastMessage.style.transition = 'opacity 300ms ease-out';
+                setTimeout(() => {
+                    errorToastMessage.remove();
+                }, 300);
+            }, duration);
+        }
+    </script>
+<% } %>

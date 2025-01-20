@@ -1,0 +1,27 @@
+<% if (success && success.length > 0) { %>
+    <div id="success-toast-message" style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background-color: #4caf50; color: white; padding: 16px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 300px;">
+        <span style="font-weight: bold;">
+            <p>Siuuuuuuuu</p>
+            <%= success %>
+        </span>
+        <div id="success-progress-bar" style="margin-top: 8px; height: 4px; background-color: #81c784; width: 100%;"></div>
+    </div>
+    <script>
+        const successToastMessage = document.getElementById('success-toast-message');
+        const successProgressBar = document.getElementById('success-progress-bar');
+        if (successToastMessage) {
+            const duration = 5000;
+            successProgressBar.style.width = '100%';
+            void successProgressBar.offsetWidth;
+            successProgressBar.style.transition = `width ${duration}ms linear`;
+            successProgressBar.style.width = '0%';
+            setTimeout(() => {
+                successToastMessage.style.opacity = '0';
+                successToastMessage.style.transition = 'opacity 800ms ease-out';
+                setTimeout(() => {
+                    successToastMessage.remove();
+                }, 300);
+            }, duration);
+        }
+    </script>
+<% } %>
